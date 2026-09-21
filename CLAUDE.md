@@ -944,6 +944,7 @@ Key routing rules:
 - Product ideas/brainstorming → invoke /office-hours
 - Strategy/scope → invoke /plan-ceo-review
 - Architecture → invoke /plan-eng-review
+- Unity implementation planning/refinement → invoke /unity-test-exp (or /gstack-unity-test-exp when skill_prefix is enabled)
 - Design system/plan review → invoke /design-consultation or /plan-design-review
 - Full review pipeline → invoke /autoplan
 - Bugs/errors → invoke /investigate
