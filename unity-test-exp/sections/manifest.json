@@ -1,0 +1,13 @@
+{
+  "$schema": "https://gstack.dev/schemas/section-manifest.json",
+  "skill": "unity-test-exp",
+  "version": 1,
+  "sections": [
+    {
+      "id": "checklist",
+      "file": "checklist.md",
+      "title": "Unity plan refinement checklist (scope, architecture, phases, testing)",
+      "trigger": "reframing the plan into a Unity-ready execution plan"
+    }
+  ]
+}

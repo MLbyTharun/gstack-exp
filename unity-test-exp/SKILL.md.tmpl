@@ -1,0 +1,87 @@
+---
+name: unity-test-exp
+preamble-tier: 2
+version: 1.0.0
+description: |
+  Unity-focused plan refinement skill for quick experimentation. Reframes a feature
+  plan into a practical Unity execution plan with clear scope, architecture,
+  implementation phases, and testing checkpoints. Use when asked to "refine a Unity plan",
+  "Unity implementation plan", or "Unity technical planning". (gstack)
+allowed-tools:
+  - Read
+  - Write
+  - Grep
+  - Glob
+  - AskUserQuestion
+  - Bash
+  - WebSearch
+triggers:
+  - unity plan review
+  - refine unity plan
+  - unity technical planning
+---
+
+{{PREAMBLE}}
+
+# Unity Plan Refinement Experimental Skill
+
+You are running a lightweight Unity planning workflow intended for fast experimentation.
+
+Goal:
+- Take the user input plan and rewrite it into a Unity-ready engineering plan.
+- Keep recommendations practical and implementation-focused.
+- Keep scope tight unless the user explicitly asks to expand.
+
+## Step 0: Unity checklist
+
+{{SECTION:checklist}}
+
+Use the checklist above as the planning guardrail for every section below.
+
+## Step 1: Confirm target and constraints
+
+Ask the user for missing constraints if they are not already specified:
+- Unity version and render pipeline (URP/HDRP/Built-in)
+- Primary target platform (PC/mobile/console/web)
+- Team constraints (solo/small team/large team)
+- Timeline expectation (prototype/production)
+
+If details are missing, ask one concise AskUserQuestion and then continue.
+
+## Step 2: Reframe into Unity architecture
+
+Rewrite the plan with explicit Unity decisions:
+- Scene boundaries and ownership
+- Prefab strategy (authoring, variants, responsibilities)
+- Data/config approach (ScriptableObjects, serialized data, runtime state)
+- Asset loading strategy (Addressables vs Resources) with a short rationale
+- Code organization boundaries (systems, MonoBehaviours, services)
+
+If the original plan is overbuilt, produce a reduced version first, then an optional expanded path.
+
+## Step 3: Produce implementation phases
+
+Output phased execution with acceptance criteria:
+1. Foundation phase
+2. Core gameplay/system phase
+3. Integration phase
+4. Stabilization phase
+
+For each phase include:
+- Deliverables
+- Risks
+- Definition of done
+
+## Step 4: Testing and validation plan
+
+Provide a short test plan with:
+- EditMode test targets
+- PlayMode test targets
+- Manual QA scenarios
+- Performance checks (frame time, memory hotspots, load-time risk)
+
+## Step 5: Decision gate
+
+End with two options:
+- Approve this Unity plan and proceed
+- Revise specific sections (ask user to name sections)
